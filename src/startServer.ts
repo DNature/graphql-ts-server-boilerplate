@@ -1,6 +1,6 @@
 import { GraphQLServer } from 'graphql-yoga';
 import { importSchema } from 'graphql-import';
-import { resolvers } from './resolvers';
+import { resolvers } from './modules/register/resolvers';
 import * as path from 'path';
 import { createTypeormConn } from './utils/createTypormConn';
 
