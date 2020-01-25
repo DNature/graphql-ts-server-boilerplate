@@ -1,7 +1,7 @@
 import { request } from 'graphql-request';
-import { User } from '../entity/User';
-import { startServer } from '../startServer';
 import { AddressInfo } from 'net';
+import { startServer } from '../../startServer';
+import { User } from '../../entity/User';
 
 let getHost = () => '';
 beforeAll(async () => {
