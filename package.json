@@ -5,6 +5,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/graphql": "^14.5.0",
+    "@types/ioredis": "^4.14.4",
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
     "@types/yup": "^0.26.28",
@@ -13,6 +14,7 @@
     "nodemon": "^2.0.2",
     "ts-jest": "^25.0.0",
     "ts-node": "8.6.2",
+    "tsconfig-paths": "^3.9.0",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "3.7.5"
@@ -20,11 +22,12 @@
   "dependencies": {
     "@types/uuid": "^3.4.6",
     "bcryptjs": "^2.4.3",
-    "graphql": "^14.5.8",
+    "graphql": "14.5.8",
     "graphql-import": "^0.7.1",
     "graphql-request": "^1.8.2",
     "graphql-tools": "^4.0.6",
     "graphql-yoga": "^1.18.3",
+    "ioredis": "^4.14.1",
     "pg": "^7.17.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "0.2.22",
@@ -33,7 +36,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec ts-node --files src/index.ts",
-    "test": "NODE_ENV=test jest --forceExit",
+    "test": "NODE_ENV=test jest --watchAll",
     "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
   },
   "license": "MIT"

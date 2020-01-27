@@ -4,13 +4,10 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   verbose: true,
-  moduleFileExtensions: [
-    ...defaults.moduleFileExtensions,
-    'ts',
-    'tsx',
-    'js',
-    'jsx',
-    'json',
-    'node'
-  ]
+  globalSetup: '<rootDir>/src/testSetup/callSetup.js',
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  }
 };

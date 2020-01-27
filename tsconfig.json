@@ -4,7 +4,7 @@
     "module": "commonjs",
     "lib": ["dom", "ES6", "ES2017", "ESNext.AsyncIterable"],
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "asd",
     "moduleResolution": "node",
 
     "removeComments": true,
@@ -19,9 +19,12 @@
     "allowSyntheticDefaultImports": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowJs": true
+    "noEmit": true,
+    "types": ["jest", "node"]
   },
   "exclude": ["node_modules"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
-  "allowJs": true
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "./src"],
+  "allowJs": false
 }
+
+// "allowJs": true,
