@@ -8,6 +8,7 @@
     "@types/ioredis": "^4.14.4",
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
+    "@types/node-fetch": "^2.5.4",
     "@types/yup": "^0.26.28",
     "gql2ts": "^1.10.1",
     "jest": "^25.1.0",
@@ -28,6 +29,7 @@
     "graphql-tools": "^4.0.6",
     "graphql-yoga": "^1.18.3",
     "ioredis": "^4.14.1",
+    "node-fetch": "^2.6.0",
     "pg": "^7.17.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "0.2.22",
@@ -36,7 +38,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec ts-node --files src/index.ts",
-    "test": "NODE_ENV=test jest --watchAll",
+    "test": "NODE_ENV=test jest --coverage --watch",
     "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
   },
   "license": "MIT"
