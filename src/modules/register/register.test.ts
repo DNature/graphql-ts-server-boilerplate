@@ -2,6 +2,7 @@ import { request } from 'graphql-request';
 // import { AddressInfo } from 'net';
 // import { startServer } from '../../startServer';
 import { User } from '../../entity/User';
+import { createTypeormConn } from '../../utils/createTypormConn';
 import {
   duplicateEmail,
   emailNotLongEnouch,
@@ -9,12 +10,9 @@ import {
   passwordNotLongEnough
 } from './errorMessages';
 
-// let getHost = () => '';
-// beforeAll(async () => {
-//   const app = await startServer();
-//   const { port } = app.address() as AddressInfo;
-//   getHost = () => `http://127.0.0.1:${port}`;
-// });
+beforeAll(async () => {
+  await createTypeormConn();
+});
 
 const email = 'tom@bob.com';
 const password = 'aksdfhasd';
