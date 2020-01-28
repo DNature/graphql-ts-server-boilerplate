@@ -17,7 +17,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  if (conn) await conn.close();
+  await conn.close();
 });
 const email = 'tom@bob.com';
 const password = 'aksdfhasd';

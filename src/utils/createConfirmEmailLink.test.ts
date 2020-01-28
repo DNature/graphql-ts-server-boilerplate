@@ -22,7 +22,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  if (conn) await conn.close();
+  await conn.close();
 });
 
 it('Make sure it confirms user and clears key in redis', async () => {
