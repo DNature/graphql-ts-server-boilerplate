@@ -9,11 +9,16 @@ import {
   invalidEmail,
   passwordNotLongEnough
 } from './errorMessages';
+import { Connection } from 'typeorm';
 
+let conn: Connection;
 beforeAll(async () => {
-  await createTypeormConn();
+  conn = await createTypeormConn();
 });
 
+afterAll(async () => {
+  if (conn) await conn.close();
+});
 const email = 'tom@bob.com';
 const password = 'aksdfhasd';
 
