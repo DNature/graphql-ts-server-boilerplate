@@ -2,7 +2,6 @@ import * as bcrypt from "bcryptjs";
 
 import { ResolverMap } from "../../types/graphql-utils";
 import { User } from "../../entity/User";
-import { invalidLogin, confirmEmailError } from "./errorMessages";
 import { userSessionIdPrefix } from "src/constants";
 
 const errorResponse = [
@@ -14,7 +13,7 @@ const errorResponse = [
 
 export const resolvers: ResolverMap = {
   Query: {
-    bye2: () => "bye"
+    dumy2: () => "Hello"
   },
   Mutation: {
     login: async (

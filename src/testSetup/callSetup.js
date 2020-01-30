@@ -1,5 +1,5 @@
+require('ts-node');
 require('tsconfig-paths/register');
-// require('ts-node/register');
 
 // If you want to reference other typescript modules, do it via require:
 const { setup } = require('./setup');

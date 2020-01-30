@@ -1,4 +1,3 @@
-import * as bcrypt from 'bcryptjs';
 import * as yup from 'yup';
 import { ResolverMap } from '../../types/graphql-utils';
 import { User } from '../../entity/User';
@@ -54,25 +53,21 @@ export const resolvers: ResolverMap = {
           }
         ];
       }
-      try {
-        const hashedPassword = await bcrypt.hash(password, 12);
-        const user = User.create({
-          email,
-          password: hashedPassword
-        });
+      const user = User.create({
+        email,
+        password
+      });
 
-        await user.save();
-        // TODO: to send email
-        // if (process.env.NODE_ENV !== 'test') {
-        //   await sendEmail(
-        //     email,
-        //     await createConfirmEmailLink(url, user.id, redis)
-        //   );
-        // }
-        // await createConfirmEmailLink(url, user.id, redis)
-      } catch (err) {
-        console.log(err);
-      }
+      await user.save();
+      // TODO: to send email
+      // if (process.env.NODE_ENV !== 'test') {
+      //   await sendEmail(
+      //     email,
+      //     await createConfirmEmailLink(url, user.id, redis)
+      //   );
+      // }
+      // await createConfirmEmailLink(url, user.id, redis)
+
       return null;
     }
   }

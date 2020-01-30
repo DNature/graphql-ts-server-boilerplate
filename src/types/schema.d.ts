@@ -23,6 +23,8 @@ column: number;
 interface IQuery {
 __typename: "Query";
 bye2: string | null;
+dummy: string | null;
+me: IUser | null;
 hello: string;
 }
 
@@ -30,9 +32,16 @@ interface IHelloOnQueryArguments {
 name?: string | null;
 }
 
+interface IUser {
+__typename: "User";
+id: string;
+email: string;
+}
+
 interface IMutation {
 __typename: "Mutation";
 login: Array<IError> | null;
+logout: boolean;
 register: Array<IError> | null;
 }
 

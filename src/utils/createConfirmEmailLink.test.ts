@@ -33,7 +33,6 @@ it('Make sure it confirms user and clears key in redis', async () => {
   );
   const response = await fetch(url);
   const text = await response.text();
-  console.log(text);
 
   expect(text).toEqual('ok');
 

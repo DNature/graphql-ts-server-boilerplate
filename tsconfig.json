@@ -6,6 +6,7 @@
     "sourceMap": true,
     "outDir": "asd",
     "moduleResolution": "node",
+    "baseUrl": ".",
 
     "removeComments": true,
     "noImplicitAny": true,
