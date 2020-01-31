@@ -1,12 +1,12 @@
-const { defaults } = require('jest-config');
+const { defaults } = require("jest-config");
 
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  preset: "ts-jest",
+  testEnvironment: "node",
   verbose: true,
-  globalSetup: '<rootDir>/src/testSetup/callSetup.js',
+  globalSetup: "<rootDir>/src/testUtils/callSetup.js",
   globals: {
-    'ts-jest': {
+    "ts-jest": {
       diagnostics: false
     }
   }
