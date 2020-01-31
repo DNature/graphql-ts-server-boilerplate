@@ -50,16 +50,18 @@ export const resolvers: ResolverMap = {
         ];
       }
 
-      const valid = await bcrypt.compare(password, user.password);
+      if (user.password) {
+        const valid = await bcrypt.compare(password, user.password);
 
-      if (!valid) {
-        return errorResponse;
-      }
+        if (!valid) {
+          return errorResponse;
+        }
 
-      // login sucessful
-      session.userId = user.id;
-      if (req.sessionID) {
-        await redis.lpush(`${userSessionIdPrefix}${user.id}`, req.sessionID);
+        // login sucessful
+        session.userId = user.id;
+        if (req.sessionID) {
+          await redis.lpush(`${userSessionIdPrefix}${user.id}`, req.sessionID);
+        }
       }
 
       return null;

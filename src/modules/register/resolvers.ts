@@ -7,7 +7,7 @@ import {
   emailNotLongEnouch,
   invalidEmail
 } from "./errorMessages";
-import { registerPasswordValidation } from "src/yupSchemas";
+import { registerPasswordValidation } from "../../yupSchemas";
 // import { createConfirmEmailLink } from '../../utils/createConfirmEmailLink';
 // import { sendEmail } from '../../utils/sendEmail';
 
